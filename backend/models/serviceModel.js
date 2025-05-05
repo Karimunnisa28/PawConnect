@@ -1,3 +1,4 @@
+// models/serviceModel.js
 const mongoose = require('mongoose');
 
 const serviceSchema = new mongoose.Schema({
@@ -11,16 +12,18 @@ const serviceSchema = new mongoose.Schema({
         required: true
     },
     description: String,
-    pricing: {
+    category: {
+        type: String,
+        enum: ['grooming', 'walking', 'training', 'veterinary', 'boarding', 'other']
+    },
+    price: {
         amount: Number,
-        currency: String,
-        unit: String
+        currency: String
     },
     availability: [{
         day: String,
         slots: [String]
     }],
-    category: String,
     ratings: [{
         user: {
             type: mongoose.Schema.Types.ObjectId,
@@ -29,6 +32,6 @@ const serviceSchema = new mongoose.Schema({
         rating: Number,
         review: String
     }]
-});
+}, { timestamps: true });
 
 module.exports = mongoose.model('Service', serviceSchema);

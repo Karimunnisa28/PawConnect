@@ -1,3 +1,4 @@
+// models/petModel.js
 const mongoose = require('mongoose');
 
 const petSchema = new mongoose.Schema({
@@ -10,26 +11,15 @@ const petSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    basicInfo: {
-        species: String,
-        breed: String,
-        age: Number,
-        gender: String
-    },
+    species: String,
+    breed: String,
+    age: Number,
+    gender: String,
     medicalRecords: [{
         date: Date,
         description: String,
-        veterinarian: String,
-        documents: [String]
-    }],
-    socialProfile: {
-        friends: [{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Pet'
-        }],
-        photos: [String],
-        bio: String
-    }
-});
+        veterinarian: String
+    }]
+}, { timestamps: true });
 
 module.exports = mongoose.model('Pet', petSchema);

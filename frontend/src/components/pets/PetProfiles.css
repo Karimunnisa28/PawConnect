@@ -1,0 +1,207 @@
+/* src/components/pets/PetProfiles.css */
+.pet-profiles-container {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .pet-profiles-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .pet-profiles-header h1 {
+    font-size: 2.5rem;
+    color: #ff6b6b;
+    margin-bottom: 20px;
+  }
+  
+  .pet-filters {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .filter-select {
+    padding: 10px 20px;
+    border: 2px solid #eee;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    background: white;
+    transition: all 0.3s ease;
+  }
+  
+  .filter-select:hover {
+    border-color: #ff6b6b;
+  }
+  
+  .filter-button {
+    padding: 10px 25px;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .filter-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+  }
+  
+  .pets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+  }
+  
+  .pet-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .pet-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .pet-image {
+    position: relative;
+    height: 300px;
+  }
+  
+  .pet-image img {
+    width: 150%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .pet-status {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    font-size: 0.9rem;
+    color: #ff6b6b;
+  }
+  
+  .pet-info {
+    padding: 30px;
+  }
+  
+  .pet-info h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .pet-personality {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 15px 0;
+  }
+  
+  .personality-tag {
+    padding: 5px 15px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .pet-description {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  .adopt-button {
+    width: 100%;
+    padding: 12px;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .adopt-button:hover {
+    background: #ff5252;
+    transform: translateY(-2px);
+  }
+  
+  @media (max-width: 768px) {
+    .pet-filters {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .pets-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .results-count {
+    margin-top: 20px;
+    color: #666;
+    font-size: 1.1rem;
+  }
+  
+  .reset-button {
+    padding: 10px 25px;
+    background: #666;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+  }
+  
+  .reset-button:hover {
+    background: #555;
+    transform: translateY(-2px);
+  }
+  
+  .no-results {
+    text-align: center;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    margin-top: 20px;
+  }
+  
+  .no-results h3 {
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .pet-filters {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  
+  @media (max-width: 768px) {
+    .pet-filters {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .reset-button {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  }

@@ -1,0 +1,12 @@
+﻿{
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "cd frontend && npm run build",
+    "test": "jest",
+    "deploy": "bash deploy/deploy.sh",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down"
+  }
+}

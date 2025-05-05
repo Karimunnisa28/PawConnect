@@ -1,0 +1,19 @@
+﻿version: "3.8"
+services:
+  app:
+    build: .
+    ports:
+      - "5001:5001"
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=mongodb://mongo:27017/pawconnect
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:

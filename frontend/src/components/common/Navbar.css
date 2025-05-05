@@ -1,0 +1,111 @@
+.navbar {
+  background: rgba(255, 255, 255, 0.6); /* Translucent background */
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  padding: 1.2rem;
+  box-shadow: 0 4px 15px rgba(255, 192, 203, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 20px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-brand a {
+  text-decoration: none;
+  color: #ff6b6b;
+  transition: all 0.3s ease;
+  text-shadow: 0 2px 4px rgba(255, 107, 107, 0.2);
+}
+
+.navbar-brand a:hover {
+  transform: scale(1.05);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #666;
+  padding: 0.8rem 1.2rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar-links a:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: #ff6b6b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.1);
+}
+
+/* Active link style */
+.navbar-links a.active {
+  background: rgba(255, 107, 107, 0.2);
+  color: #ff6b6b;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.15);
+}
+
+/* Add cute icons with emojis */
+.navbar-links a::after {
+  margin-left: 6px;
+  font-size: 1.1em;
+}
+
+.navbar-links a[href="/home"]::after { content: "🏠"; }
+.navbar-links a[href="/pets"]::after { content: "🐾"; }
+.navbar-links a[href="/services"]::after { content: "🦮"; }
+.navbar-links a[href="/community"]::after { content: "💝"; }
+.navbar-links a[href="/profile"]::after { content: "👤"; }
+
+/* Hover animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.navbar-links a:hover {
+  animation: float 1s ease infinite;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .navbar-brand {
+    margin-bottom: 1rem;
+  }
+
+  .navbar-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar-links a {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}
